@@ -1,0 +1,40 @@
+exclude: .*migrations\/.*
+repos:
+-   repo: https://github.com/psf/black-pre-commit-mirror
+    rev: 23.9.1
+    hooks:
+    -   id: black
+        language_version: python3.10
+
+-   repo: https://github.com/pycqa/isort
+    rev: 5.12.0
+    hooks:
+    -   id: isort
+
+-   repo: https://github.com/pycqa/flake8
+    rev: 6.1.0
+    hooks:
+    -   id: flake8
+
+-   repo: https://github.com/Riverside-Healthcare/djLint
+    rev: v1.32.0
+    hooks:
+    -   id: djlint-reformat-django
+    -   id: djlint-django
+
+-   repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v1.8.0
+    hooks:
+    -   id: mypy
+        additional_dependencies: [django-stubs, types-requests]
+
+-   repo: https://github.com/django-check-migration/django-check-migration
+    rev: 0.1.0
+    hooks:
+    -   id: django-check-migration
+
+-   repo: https://github.com/commitizen-tools/commitizen
+    rev: v3.20.0
+    hooks:
+    -   id: commitizen
+        stages: [commit-msg]
